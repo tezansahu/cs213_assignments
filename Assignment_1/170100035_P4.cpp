@@ -15,15 +15,28 @@ void mergeSortedArrays(int* a, int* b, int* c, int n1, int n2){
 
 int main(int argc, char* argv[]){
     int n1, n2;
-    cin>>n1>>n2;
+    int n;
+    int arr[n];
+
+    cin>>n;
+
+    for(int i = 0; i < n; i++){
+        cin>>arr[i];
+        if(i>0 && arr[i]<arr[i-1]){
+            n1 = i;
+            n2 = n-n1;
+        }
+    }
+    // cin>>n1>>n2;
     int a[n1], b[n2];
 
-    // Take 2 sorted arrays of size n as inputs
+    // // Take 2 sorted arrays of size n as inputs
     for(int i = 0; i < n1; i++){
-        cin>>a[i];
+        a[i] = arr[i];
     }
+    
     for(int i = 0; i < n2; i++){
-        cin>>b[i];
+        b[i] = arr[i+n1];
     }
     
     int c[n1 + n2];

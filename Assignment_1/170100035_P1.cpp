@@ -75,7 +75,7 @@ int main(int argc, char* argv[]){
         cout<<x<<" "<<y<<"\n";
         pair<int, int> q_lims = fetchMarksQuery(students, x, y);;
 
-        for (int j = q_lims.second; j >= q_lims.first; j--){
+        for (int j = q_lims.first; j <= q_lims.second; j++){
             cout<<students[j].rno<<"\n";
         }
     }
